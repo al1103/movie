@@ -26,9 +26,9 @@ tabs.forEach((tab, index) => {
 
   }
 });
-const key_discode = '/discover/movie?sort_by=popularity.desc&'
-const key_popual = '/discover/movie/?certification_country=US&certification=R&sort_by=vote_average.desc&'
-const url_like = '/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&'
+const key_discode = '/discover/movie?sort_by=popularity.desc&';
+const key_popual = '/discover/movie/?certification_country=US&certification=R&sort_by=vote_average.desc&';
+const url_like = '/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&';
 const api_key = 'api_key=f2140df4cddc9d6c7b7768bf1a0dba7d';
 const url = 'https://api.themoviedb.org/3';
 const url_img = 'https://image.tmdb.org/t/p/w500';
@@ -43,9 +43,9 @@ const url_movies = url + key_discode + api_key;
 const url_likes = url + url_like + api_key;
 const url_updates = url + url_update + api_key;
 const url_rights = url + url_right + api_key;
-json_Movie_popual(url_movies);
-json_Movies(url_likes);
-json_Movie_like(url_popuals);
+json_Movie_popual(url_popuals);
+json_Movies(url_movies);
+json_Movie_like(url_likes);
 json_Movie_Update(url_updates);
 json_Movie_Even(url_evens);
 json_Movie_Done(url_dones);
@@ -60,8 +60,8 @@ function json_Movie_popual(url_movie) {
     .catch(err => console.error(err));
 
 }
-function json_Movie_like(url_movie) {
-  fetch(url_movie)
+function json_Movie_like(url_likes) {
+  fetch(url_likes)
     .then(response => response.json())
     .then(response => {
       like_movies(response.results)
@@ -115,9 +115,8 @@ function json_Movie_Right(url_movie) {
     .catch(err => console.error(err));
 
 }
+tabs_film.innerHTML = '';
 function showMovie(data) {
-  tabs_film.innerHTML = '';
-
   data.forEach((movie) => {
     const { backdrop_path, id, original_title, poster_path } = movie;
     const movies = document.createElement('div');
@@ -183,7 +182,7 @@ function like_movies(data) {
         </button>
     </div>
     </a>
-        
+
     `
     film_like.appendChild(movie_news)
   })
@@ -191,7 +190,7 @@ function like_movies(data) {
 film_Update.innerHTML = '';
 function update_movies(data) {
   data.forEach(movies => {
-    const { backdrop_path, id, original_title, poster_path } = movies;
+    const { id, original_title, poster_path } = movies;
     const movie = document.createElement('div')
     movie.classList.add('logo-movie1');
     movie.innerHTML = `
@@ -239,7 +238,7 @@ function even_movies(data) {
 }
 function done_movies(data) {
   data.forEach(movies => {
-    const { backdrop_path, id, original_title, poster_path } = movies;
+    const { id, original_title, poster_path } = movies;
     const movie = document.createElement('div')
     movie.classList.add('logo-movie1');
     movie.innerHTML = `
@@ -294,7 +293,7 @@ a.map
 film_Film.innerHTML = '';
 function right_films(data) {
   data.forEach(x => {
-    const { backdrop_path, id, original_title, poster_path, vote_average, release_date, original_language } = x;
+    const { id, poster_path, vote_average, release_date, original_language } = x;
     const movie = document.createElement('li')
     movie.classList.add('banner')
     movie.innerHTML = `
