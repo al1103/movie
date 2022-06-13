@@ -43,7 +43,7 @@ const url_movies = url + key_discode + api_key;
 const url_likes = url + url_like + api_key;
 const url_updates = url + url_update + api_key;
 const url_rights = url + url_right + api_key;
-json_Movie_popual(url_popuals);
+json_Movie_popual(url_rights);
 json_Movies(url_movies);
 json_Movie_like(url_likes);
 json_Movie_Update(url_updates);
