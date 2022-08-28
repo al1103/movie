@@ -1,6 +1,8 @@
 
 const tabs_film = document.querySelector('.slide-show')
 const film_like = document.querySelector('.film-like')
+const bodys = document.querySelector('.body')
+
 const film_Update = document.getElementById('movie_update');
 const film_Even = document.getElementById('movie_even');
 const film_Done = document.getElementById('movie_done');
@@ -26,6 +28,10 @@ tabs.forEach((tab, index) => {
 
   }
 });
+
+window.onload = function body() {
+  bodys.style.display = "block";
+}
 const key_discode = '/discover/movie?sort_by=popularity.desc&';
 const key_popual = '/discover/movie/?certification_country=US&certification=R&sort_by=vote_average.desc&';
 const url_like = '/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&';
