@@ -50,8 +50,8 @@ json_Movie_Update(url_updates);
 json_Movie_Even(url_evens);
 json_Movie_Done(url_dones);
 json_Movie_Right(url_rights);
-function json_Movie_popual(url_movie) {
-  fetch(url_movie)
+async function json_Movie_popual(url_movie) {
+  return await fetch(url_movie)
     .then(response => response.json())
     .then(response => {
       showMovie(response.results)
@@ -60,8 +60,8 @@ function json_Movie_popual(url_movie) {
     .catch(err => console.error(err));
 
 }
-function json_Movie_like(url_likes) {
-  fetch(url_likes)
+async function json_Movie_like(url_likes) {
+  return await fetch(url_likes)
     .then(response => response.json())
     .then(response => {
       like_movies(response.results)
@@ -69,8 +69,8 @@ function json_Movie_like(url_likes) {
     .catch(err => console.error(err));
 
 }
-function json_Movie_Even(url_movie) {
-  fetch(url_movie)
+async function json_Movie_Even(url_movie) {
+  return await fetch(url_movie)
     .then(response => response.json())
     .then(response => {
       even_movies(response.results)
@@ -78,8 +78,8 @@ function json_Movie_Even(url_movie) {
     .catch(err => console.error(err));
 
 }
-function json_Movie_Done(url_movie) {
-  fetch(url_movie)
+async function json_Movie_Done(url_movie) {
+  return await fetch(url_movie)
     .then(response => response.json())
     .then(response => {
       done_movies(response.results)
@@ -87,8 +87,8 @@ function json_Movie_Done(url_movie) {
     .catch(err => console.error(err));
 
 }
-function json_Movies(url_popuals) {
-  fetch(url_popuals)
+async function json_Movies(url_popuals) {
+  return await fetch(url_popuals)
     .then(response => response.json())
     .then(response => {
       new_Movie(response.results)
@@ -96,8 +96,8 @@ function json_Movies(url_popuals) {
     .catch(err => console.error(err));
 
 }
-function json_Movie_Update(url_movie) {
-  fetch(url_movie)
+async function json_Movie_Update(url_movie) {
+  return await fetch(url_movie)
     .then(response => response.json())
     .then(response => {
       update_movies(response.results)
@@ -105,8 +105,8 @@ function json_Movie_Update(url_movie) {
     .catch(err => console.error(err));
 
 }
-function json_Movie_Right(url_movie) {
-  fetch(url_movie)
+async function json_Movie_Right(url_movie) {
+  return await fetch(url_movie)
     .then(response => response.json())
     .then(response => {
       right_movies(response.results);
